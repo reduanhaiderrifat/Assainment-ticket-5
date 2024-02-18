@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>P-Ticket</title>
+    <link rel="shortcut icon" href="images/bus.gif" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -78,7 +79,7 @@
                 <h1 class="mb-5  text-6xl font-extrabold text-white">End-to-End Travel with </h1>
                  <h2 class="text-[#1DD100] text-6xl font-extrabold">P Paribahan</h2>
                 <p class="mb-5 text-[#FFFFFF] inter">Choose our buses for an affordable and comfortable travel experience, featuring amenities like <br> Wi-Fi and scenic  routes, providing passengers with a stress-free and enjoyable journey.</p>
-                <button class="btn bg-[#1DD100] text-[16px] rounded-xl border-none font-bold text-center py-5 px-7">Buy Tickets</button> 
+                <button onclick="buyTikets('select-ticket')" class="btn bg-[#1DD100] text-[16px] rounded-xl border-none font-bold text-center py-5 px-7">Buy Tickets</button> 
               </div>
             </div>
           </div>
@@ -156,7 +157,7 @@
       </div>
       </section>
       <!-- -------------- -->
-      <section class="mt-28 shadow-top rounded-2xl bg-[#F7F8F8] px-4 pb-9">
+      <section id="select-ticket" class="mt-28 shadow-top rounded-2xl bg-[#F7F8F8] px-4 pb-9">
       <div class="text-center pb-20 space-y-3">
         <h1 class="font-bold text-[40px]">P.H Paribahan</h1>
         <p class="inter text-[#03071299]">Our buses offer affordable and comfortable travel, with amenities like Wi-Fi and scenic routes,<br> ensuring a stress-free and enjoyable journey for passengers.</p>
@@ -207,10 +208,10 @@
       </div>
      
     </div>
-      </section>
+      
 
 
-      <section class="bg-[#F7F8F8] px-4 ">
+      <div class="bg-[#F7F8F8] px-4 ">
          <!-- ++++++++++++++++++++++++++++++++++++++ -->
   <div class=" bg-white flex">
     <!-- ___________________ -->
@@ -349,7 +350,8 @@
   </div>
     <!-- ____________________________________ -->
     </div>
-      </section>
+  </div>
+</section>
      </main>
      <footer class="bg-[#030712] mt-4">
 <div class="flex justify-between px-[60px] py-[120px] ">
@@ -380,5 +382,6 @@
   </div>
 </div>
      </footer>
+     <script src="script.js"></script>
 </body>
 </html>
