@@ -69,9 +69,16 @@ function setBooking(seat, personalty, price) {
   booking.appendChild(bookingItemContainer);
 }
 
-function hideElement(elementId){
+function hideElement(elementId) {
   const element = document.getElementById(elementId);
-  element.classList.add('hidden')
+  if (element) {
+    element.classList.add('hidden');
+  }
+}
+
+function showElement(elementId){
+  const element = document.getElementById(elementId);
+  element.classList.remove('hidden')
 }
 document.getElementById('apply').addEventListener('click',function(){
  hideElement('hide');
@@ -83,13 +90,19 @@ document.getElementById('inputHide').addEventListener('keyup',function(){
     
   const couple = document.getElementById('couple');
   
-  if(new1.innerText === 'NEW 15'|| couple.innerText === 'Couple 20'){
+  if(new1.innerText !== 'NEW 15'|| couple.innerText !== 'Couple 20'){
     new1.style.fontFamily = 'inter';
     couple.style.fontFamily = 'inter';
-     apply.removeAttribute('disabled')
+     apply.setAttribute('disabled')
   } else{
-    new1.style.fontFamily = ''; 
-    couple.style.fontFamily = '';
-    apply.setAttribute('disabled',true)
+    new1.style.fontFamily = 'inter'; 
+    couple.style.fontFamily = 'inter';
+    apply.removeAttribute('disabled',true)
   }
 })
+
+function inputNumber(){
+  document.getElementById('text').style.display = 'block';
+ 
+}
+

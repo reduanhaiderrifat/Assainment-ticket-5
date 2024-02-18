@@ -11,8 +11,6 @@
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://kit.fontawesome.com/f37b112101.js" crossorigin="anonymous"></script>
-
-
 <style>
     .inter{
         font-family: "Inter", sans-serif;
@@ -37,7 +35,7 @@
 
 </head>
 <body class="container mx-auto raleway">
-     <header>
+     <header id="hideAll">
         <nav>
             <div class="navbar bg-base-100 mt-3">
                 <div class="navbar-start">
@@ -120,7 +118,7 @@
           </div>    
      </header>
      <main>
-      <section class="mt-24 inter space-y-12">
+      <section id="best" class="mt-24 inter space-y-12 ">
         <h1 class="text-[40px] text-center font-bold">Best offers for you</h1>
       <div class="flex justify-center gap-5">
         <div class="flex relative ">
@@ -157,7 +155,7 @@
       </div>
       </section>
       <!-- -------------- -->
-      <section id="select-ticket" class="mt-28 shadow-top rounded-2xl bg-[#F7F8F8] px-4 pb-9">
+      <section id="select-ticket" class="mt-28 shadow-top rounded-2xl bg-[#F7F8F8] px-4 pb-9 hideAll">
       <div class="text-center pb-20 space-y-3">
         <h1 class="font-bold text-[40px]">P.H Paribahan</h1>
         <p class="inter text-[#03071299]">Our buses offer affordable and comfortable travel, with amenities like Wi-Fi and scenic routes,<br> ensuring a stress-free and enjoyable journey for passengers.</p>
@@ -335,9 +333,27 @@
     <input class="w-full p-5 rounded-xl my-4 font-normal" type="email" name="" id="" placeholder="Enter your email id ">
   </label>
 </form>
-<button onclick="inputNumber()" class="btn bg-[#1DD100] w-full rounded-lg font-semibold text-2xl text-white pt-2 pb-2"  id="text" type="submit" disabled>Text</button>
+<button onclick="my_modal_1.showModal()" class="btn bg-[#1DD100] w-full rounded-lg font-semibold text-2xl text-white pt-2 pb-2"  id="text" type="submit" disabled>Text</button>
 <div class=" flex justify-around pt-5 inter">
-
+  <dialog id="my_modal_1" class="modal">
+    <div class="modal-box">
+      <div class="modal-action">
+        <form method="dialog">
+          <section id="success" class="bg-[#FFF] text-center">
+            <div class="w-full  flex justify-center items-center">
+              <img src="images/success.png" alt="">
+            </div>
+            <h1 class="text-2xl font-bold text-[#27AE60]">SUCCESS</h1>
+            <p class="leading-[2rem] text-[20px] font-medium">Thank you for Booking Our Bus Seats. <br>
+              We are working hard to find the best service and deals for you. <br>
+             <span class="text-[#4A4A4A]"> Shortly you will find a confirmation in your email.</span></p>
+              <button onclick="successButton()" id="continue" class="btn text-[20px] font-bold text-white bg-[#27AE60] rounded-full px-24">Continue</button>
+            </section>
+          <button class="btn">Close</button>
+        </form>
+      </div>
+    </div>
+  </dialog>
 <a class="underline " href="#">Terms and Conditions</a>
   <a class="underline" href="#">Cancellation Policys</a>
 </div>
@@ -346,8 +362,9 @@
     </div>
   </div>
 </section>
+
      </main>
-     <footer class="bg-[#030712] mt-4">
+     <footer id="footer" class="bg-[#030712] mt-4 hideAll">
 <div class="flex justify-between px-[60px] py-[120px] ">
   <div class="space-y-4">
     <h1 class="text-white text-4xl font-extrabold">P-Ticket</h1>
