@@ -132,7 +132,7 @@
           
           <div class="h-6 w-6 rounded-full absolute left-[188px] -top-2 bg-white"></div>
           <div class="bg-[#FFBF0F] p-4 rounded-xl ">
-            <h1 class="text-[18px] font-medium raleway">NEW 15</h1>
+            <h1 id="new" class="text-[18px] font-medium raleway">NEW 15</h1>
             <p class="text-[#03071280]">Coupon Code</p>
           </div>
           <div class="h-6 w-6 rounded-full absolute left-[188px] -bottom-2 bg-white"></div>         
@@ -146,7 +146,7 @@
           
           <div class="h-6 w-6 rounded-full absolute left-[188px] -top-2 bg-white"></div>
           <div class="bg-[#F78C9C] p-4 rounded-xl ">
-            <h1 class="text-[18px] font-medium raleway">Couple 20</h1>
+            <h1 id="couple" class="text-[18px] font-medium raleway">Couple 20</h1>
             <p class="text-[#03071280]">Coupon Code</p>
           </div>
           <div class="h-6 w-6 rounded-full absolute left-[188px] -bottom-2 bg-white"></div>         
@@ -314,28 +314,28 @@
   <h1>Total Price</h1>
   <h1>BDT <span id="total">0</span></h1>
 </div>
-<div class="flex pt-7">
-  <input class= "py-4 w-full rounded-xl relative" type="text" name="" id="" placeholder="      Have any copupon?">
-<button class="btn bg-[#1DD100] text-white inter absolute left-[940px] mt-1" disabled>Apply</button>
+<div id="hide" class="flex pt-7">
+  <input  class= "py-4 w-full rounded-xl relative" type="text" name="" id="inputHide" placeholder=" ">
+<button id="apply" class="btn bg-[#1DD100] text-white inter absolute left-[940px] mt-1" disabled>Apply</button>
 </div>
 <div class="flex justify-between pt-7">
   <h1>Grand Total</h1>
-  <h1>BDT 1100</h1>
+  <h1>BDT <span id="grand">0</span></h1>
 </div>
 </div>
 
 <form class="p-6 " action="">
   <label class="inter text-[#030712] font-semibold" for="">Passenger Name* <br>
-    <input class="w-full p-5 rounded-xl my-4 font-normal" type="text" name="" id="" placeholder="Enter your name">
+    <input class="w-full p-5 rounded-xl my-4 font-normal" type="text" name="" id="" placeholder="Enter your name" required>
   </label>
   <label class="inter text-[#030712] font-semibold" for="">Phone Number*<br>
-    <input class="w-full p-5 rounded-xl my-4 font-normal" type="text" name="" id="" placeholder="Enter your phone number">
+    <input id="numberInput" class="w-full p-5 rounded-xl my-4 font-normal" type="number" name="" id="" placeholder="Enter your phone number" required>
   </label>
   <label class="inter text-[#030712] font-semibold" for="">Email ID<br>
-    <input class="w-full p-5 rounded-xl my-4 font-normal" type="text" name="" id="" placeholder="Enter your email id ">
+    <input class="w-full p-5 rounded-xl my-4 font-normal" type="email" name="" id="" placeholder="Enter your email id ">
   </label>
 </form>
-<button class="btn bg-[#1DD100] w-full rounded-lg font-semibold text-2xl text-white pt-2 pb-2">Text</button>
+<button onclick="inputNumber()" class="btn bg-[#1DD100] w-full rounded-lg font-semibold text-2xl text-white pt-2 pb-2"  id="text" type="submit" disabled>Text</button>
 <div class=" flex justify-around pt-5 inter">
 
 <a class="underline " href="#">Terms and Conditions</a>
@@ -377,5 +377,6 @@
 </div>
      </footer>
      <script src="script.js"></script>
+     <!-- <script src="jaans.js"></script> -->
 </body>
 </html>

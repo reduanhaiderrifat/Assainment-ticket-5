@@ -10,13 +10,19 @@ let count2 = 40;
 
 for (const btn of allBtn) {
   btn.addEventListener('click', function (e) {
+   
     count += 1;
     count2 -= 1;
     setInnerValue('seat-count', count);
     setInnerValue('seats-left', count2);
     e.target.style.backgroundColor = '#1DD100';
     e.target.style.color = '#FFF';
-    
+  const text = document.getElementById('text');
+  
+    text.removeAttribute('disabled')
+ 
+ 
+  
     // const booking = document.getElementById('booked');
     const seat = e.target.innerText;
     const clas = 'Economy';
@@ -26,6 +32,9 @@ for (const btn of allBtn) {
     let Total = parseInt(document.getElementById('total').innerText);
     Total += price;
     document.getElementById('total').innerText = Total;
+    let grandTotal = parseInt(document.getElementById('grand').innerText);
+    grandTotal += price;
+    document.getElementById('grand').innerText = grandTotal;
   });
 }
 
@@ -60,3 +69,27 @@ function setBooking(seat, personalty, price) {
   booking.appendChild(bookingItemContainer);
 }
 
+function hideElement(elementId){
+  const element = document.getElementById(elementId);
+  element.classList.add('hidden')
+}
+document.getElementById('apply').addEventListener('click',function(){
+ hideElement('hide');
+});
+
+document.getElementById('inputHide').addEventListener('keyup',function(){
+  const apply = document.getElementById('apply');
+  const new1  = document.getElementById('new');
+    
+  const couple = document.getElementById('couple');
+  
+  if(new1.innerText === 'NEW 15'|| couple.innerText === 'Couple 20'){
+    new1.style.fontFamily = 'inter';
+    couple.style.fontFamily = 'inter';
+     apply.removeAttribute('disabled')
+  } else{
+    new1.style.fontFamily = ''; 
+    couple.style.fontFamily = '';
+    apply.setAttribute('disabled',true)
+  }
+})
