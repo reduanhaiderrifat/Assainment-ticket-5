@@ -1,5 +1,5 @@
 
-  function buyTikets(elementId) {
+function buyTikets(elementId) {
   const seat = document.getElementById(elementId);
   seat.scrollIntoView({ behavior: "smooth" });
 }
@@ -29,6 +29,8 @@ for (const btn of allBtn) {
 // -======================================================
 // This is not working I copy it form chat-gpt 
 // =======================================================
+
+
 // document.addEventListener('DOMContentLoaded', function () {
 //   let selectedButtons = [];
 
@@ -53,6 +55,7 @@ for (const btn of allBtn) {
 //       });
 //   });
 // });
+
 // =======================================
 
 function setInnerValue(elementId, value) {
@@ -93,6 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
   apply.disabled = true;
   inputHide.addEventListener('input', function () {     
       const secretValue = inputHide.value.trim();
+      
       apply.disabled = !(secretValue === 'NEW15' || secretValue === 'Couple20');
     });
     apply.addEventListener('click', function () {      
@@ -124,31 +128,68 @@ function checkInput() {
   }
 }
 
-
-
 document.addEventListener('DOMContentLoaded', function () {
+  const maxSelection = 4;
   let selectedButtons = [];
 
   function selection(event) {
-      event.classList.toggle('selected');
-      let index = selectedButtons.indexOf(event);
-      if (index === -1) {
-          selectedButtons.push(event);
-      } else {
-          selectedButtons.splice(index, 1);
-      }
-      if (selectedButtons.length > 4) {
-          const nonSelectButtons = selectedButtons.shift();
-          nonSelectButtons.classList.remove('selected');
-      }
+    if (selectedButtons.length >= maxSelection && !event.classList.contains('selected')) {
+      return; // Do nothing if maximum selection is reached
+    }
+
+    event.classList.toggle('selected');
+
+    if (event.classList.contains('selected')) {
+      selectedButtons.push(event);
+    } else {
+      selectedButtons = selectedButtons.filter(button => button !== event);
+    }
+
+    checkApplyButton();
+  }
+
+  function checkApplyButton() {
+    const applyButton = document.getElementById('apply');
+    applyButton.disabled = selectedButtons.length !== maxSelection;
+
+    // Disable all buttons when maximum selection is reached
+    const buttons = document.querySelectorAll('.btn-all');
+    buttons.forEach(button => {
+      button.disabled = selectedButtons.length === maxSelection;
+    });
   }
 
   const buttons = document.querySelectorAll('.btn-all');
   buttons.forEach(function (event) {
-      event.addEventListener('click', function () {
-          selection(event);
-      });
+    event.addEventListener('click', function () {
+      selection(event);
+    });
+  });
+
+  const applyButton = document.getElementById('apply');
+  applyButton.addEventListener('click', function () {
+    // Your existing 'apply' button logic goes here
+
+    // ...
+
+    // Optionally, clear the selection after applying
+    selectedButtons.forEach(button => button.classList.remove('selected'));
+    selectedButtons = [];
+
+    // After applying, disable all buttons
+    buttons.forEach(button => {
+      button.disabled = true;
+    });
+
+    // After applying, disable the "Apply" button again
+    applyButton.disabled = true;
   });
 });
+
+
+
+
+
+
 
 
