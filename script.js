@@ -149,12 +149,11 @@ function buyTikets(elementId) {
       applyButton.disabled = true;
     });
   });
-  
-  
-  
-  
-  
-  
-  
-  
+
+function successButton() {
+  const modal = document.getElementById('my_modal_1');
+  modal.style.display = 'none';
+  // console.log('Success button clicked!');
+}
+
   

@@ -71,7 +71,7 @@
               </div>
         </nav>
         <!-- banner -->
-        <div class="relative w-full h-[600px]">
+        <div class=" relative w-full h-[600px]">
           <div class="hero bg-cover h-full bg-no-repeat rounded-2xl" style="background-image: url(images/banner.png);">
             
             <div class="hero-content text-center text-neutral-content">
@@ -85,7 +85,7 @@
               </div>
             </div>
           </div>
-          <div class="flex gap-7 bottom-[-35px] left-28 absolute">
+          <div class="flex gap-7 bottom-[-35px] left-28 static lg:absolute">
 
             <div class="shadow-Class flex items-center justify-center border  rounded-[24px] p-4 gap-3 bg-[#FFFFFF] shadow-b">
               <div class="">
@@ -121,8 +121,9 @@
 
           </div>    
      </header>
+     <!-- Header Ends Here -->
      <main>
-      <section id="best" class="mt-24 inter space-y-12 ">
+      <section id="best" class="mt-60 lg:mt-24 inter space-y-12 ">
         <h1 class="text-[40px] text-center font-bold raleway">Best offers for you</h1>
       <div class="flex justify-center gap-5">
         <div class="flex relative ">
@@ -164,12 +165,12 @@
         <h1 class="font-bold text-[40px]">P.H Paribahan</h1>
         <p class="inter text-[#03071299]">Our buses offer affordable and comfortable travel, with amenities like Wi-Fi and scenic routes,<br> ensuring a stress-free and enjoyable journey for passengers.</p>
       </div>
-      <div class="flex relative">
+      <div class="grid grid-cols-1 lg:flex  relative">
       <div class=" bg-[#FFF] p-4 pt-9 rounded-xl flex-1 border-right border-[#1DD100]">
         <!-- ++++++++++++++++++++++++++ -->
-        <div class="flex justify-between items-center ">
+        <div class="grid grid-cols-1  lg:justify-between lg:items-center lg:flex">
 
-          <div class="flex gap-4 justify-center items-center">
+          <div class=" flex gap-4 justify-center items-center ">
             <img src="images/bus.gif" alt="">
             <div class="">
               <h1 class="text-3xl font-bold">Greenline Paribahan</h1>
@@ -190,7 +191,7 @@
             <h1>Departure Time</h1>
             <h3>9:00 PM</h3>
           </div>        
-          <div class="flex justify-around  pt-5">
+          <div class="grid grid-cols-1 gap-4 mb-1 lg:justify-around  lg:pt-5 lg:flex">
             <button class="btn bg-[#0307120D] text-[#030712CC] text-[16px] font-medium inter text-center">Boarding Point - Laxmipur</button>
             <button class="btn bg-[#0307120D] text-[#030712CC] text-[16px] font-medium inter text-center">Dropping Point - Bogura</button>
             <button class="btn bg-[#0307120D] text-[#030712CC] text-[16px] font-medium inter text-center">Est. Time - 11 Hour</button>
@@ -215,7 +216,7 @@
 
       <div class="bg-[#F7F8F8] px-4 ">
          <!-- ++++++++++++++++++++++++++++++++++++++ -->
-  <div class=" bg-white mt-9 rounded-xl flex">
+  <div class=" bg-white mt-9 rounded-xl grid grid-cols-1 lg:flex">
     <!-- ___________________ -->
     <div class="flex-1 pr-1 border-right border-r-[#03071280]">
       <div class="px-3 pt-2 ">
@@ -318,7 +319,7 @@
 </div>
 <div id="hide" class="flex pt-7">
   <input  class= "py-4 w-full rounded-xl relative" type="text" name="" id="inputHide" placeholder="Have any copupon? ">
-<button id="apply" class="btn bg-[#1DD100] text-white inter absolute left-[940px] mt-1">Apply</button>
+<button id="apply" class="btn bg-[#1DD100] left-[450px] text-white inter absolute lg:left-[940px] mt-1">Apply</button>
 </div>
 <div class="flex justify-between pt-7">
   <h1>Grand Total</h1>
