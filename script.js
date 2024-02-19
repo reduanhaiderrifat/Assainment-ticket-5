@@ -26,6 +26,35 @@ for (const btn of allBtn) {
     document.getElementById('grand').innerText = grandTotal;
   });
 }
+// -======================================================
+// This is not working I copy it form chat-gpt 
+// =======================================================
+// document.addEventListener('DOMContentLoaded', function () {
+//   let selectedButtons = [];
+
+//   function selection(event) {
+//       event.classList.toggle('selected');
+//       let index = selectedButtons.indexOf(event);
+//       if (index === -1) {
+//           selectedButtons.push(event);
+//       } else {
+//           selectedButtons.splice(index, 1);
+//       }
+//       if (selectedButtons.length > 4) {
+//           const nonSelectButtons = selectedButtons.shift();
+//           nonSelectButtons.classList.remove('selected');
+//       }
+//   }
+
+//   const buttons = document.querySelectorAll('.btn-all');
+//   buttons.forEach(function (event) {
+//       event.addEventListener('click', function () {
+//           selection(event);
+//       });
+//   });
+// });
+// =======================================
+
 function setInnerValue(elementId, value) {
   const element = document.getElementById(elementId);
   element.innerText = value;
@@ -94,3 +123,32 @@ function checkInput() {
         textButton.setAttribute('disabled', true);
   }
 }
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  let selectedButtons = [];
+
+  function selection(event) {
+      event.classList.toggle('selected');
+      let index = selectedButtons.indexOf(event);
+      if (index === -1) {
+          selectedButtons.push(event);
+      } else {
+          selectedButtons.splice(index, 1);
+      }
+      if (selectedButtons.length > 4) {
+          const nonSelectButtons = selectedButtons.shift();
+          nonSelectButtons.classList.remove('selected');
+      }
+  }
+
+  const buttons = document.querySelectorAll('.btn-all');
+  buttons.forEach(function (event) {
+      event.addEventListener('click', function () {
+          selection(event);
+      });
+  });
+});
+
+
